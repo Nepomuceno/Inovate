@@ -15,7 +15,10 @@ namespace Inovate.Web.Models
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         public string Title { get; set; }
         [Required]
-        [StringLength(8000, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(200, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 50)]
+        public string ShortDescription { get; set; }
+        [Required]
+        [StringLength(8000, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 200)]
         public string Desciption { get; set; }
         public string Owner { get; set; }
         [DataType(DataType.Currency)]

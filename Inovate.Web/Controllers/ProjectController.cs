@@ -18,7 +18,7 @@ namespace Inovate.Web.Controllers
         {
             return View();
         }
-        public ActionResult CreateProjec()
+        public ActionResult CreateProject()
         {
             return View();
         }
