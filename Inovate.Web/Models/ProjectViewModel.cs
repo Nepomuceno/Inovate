@@ -43,9 +43,9 @@ namespace Inovate.Web.Models
                 var project = new ProjectViewModel();
                 project.Id = i;
                 project.ImageUrl = "http://lorempixel.com/140/140";
-                project.Title = NLipsum.Core.LipsumGenerator.Generate(3, NLipsum.Core.Features.Words, "{0}", NLipsum.Core.Lipsums.TierrayLuna);
-                project.Desciption = NLipsum.Core.LipsumGenerator.Generate(6, NLipsum.Core.Features.Paragraphs, "{0}", NLipsum.Core.Lipsums.TierrayLuna);
-                project.ShortDescription = NLipsum.Core.LipsumGenerator.Generate(2, NLipsum.Core.Features.Sentences, "{0}", NLipsum.Core.Lipsums.TierrayLuna);
+                project.Title = NLipsum.Core.LipsumGenerator.Generate(3, NLipsum.Core.Features.Words, "{0} ", NLipsum.Core.Lipsums.TierrayLuna);
+                project.Desciption = NLipsum.Core.LipsumGenerator.GenerateHtml(6);
+                project.ShortDescription = NLipsum.Core.LipsumGenerator.Generate(100, NLipsum.Core.Features.Characters, "{0}", NLipsum.Core.Lipsums.TierrayLuna);
                 project.Owner = i % 2 == 0 ? "Gabriel" : "Takenet";
                 int required = rd.Next(200, 1000);
                 project.Required = required;

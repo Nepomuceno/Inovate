@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 60px;
     padding-bottom: 40px;
-    background-color:#fbfbfe;
+    background-color: #fbfbfe;
 }
 
 /* styles for validation helpers */
@@ -11,7 +11,7 @@
 
 .field-validation-valid {
     display: none;
- }
+}
 
 input.input-validation-error {
     border: 1px solid #b94a48;
@@ -31,9 +31,28 @@ input[type="checkbox"].input-validation-error {
 
 /* styles for removing the background from form */
 .no-color {
-  background-color: white;
-  border-style:none;
+    background-color: white;
+    border-style: none;
 }
+
 .jumbotron {
-  background-image:url('http://lorempixel.com/1600/500/business/')
+    background-image: url('http://lorempixel.com/1600/500/business/');
+}
+
+.projects-content {
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #d0d5cb;
+    padding: 25px 15px;
+    -webkit-box-shadow: 0 0 0 4px rgba(208,213,203,0.3);
+    -moz-box-shadow: 0 0 0 4px rgba(208,213,203,0.3);
+    box-shadow: 0 0 0 4px rgba(208,213,203,0.3);
+}
+
+projectStatus {
+    background-color: #dde;
 }

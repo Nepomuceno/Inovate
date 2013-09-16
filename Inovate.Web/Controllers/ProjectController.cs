@@ -17,7 +17,7 @@ namespace Inovate.Web.Controllers
         }
         public ActionResult Project(int projectId)
         {
-            return View(ProjectViewModel.GenerateSampleData(1).FirstOrDefault());
+            return View(ProjectViewModel.GenerateSampleData(projectId + 1).FirstOrDefault());
         }
         public ActionResult CreateProject()
         {

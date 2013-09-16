@@ -4,33 +4,39 @@
     ViewBag.Title = "Project";
 }
 
-<h2>Project</h2>
+<h2>@Model.Title</h2>
 
-<div class="NS-projects-content">
+<div class="projects-content container">
     <div class="col-md-9">
-        <div data-has-video="true" id="video-section">
-            <img src="http://lorempixel.com/600/500" alt="@Model.Title" />
+        <div>
+            <img src="http://lorempixel.com/800/450" alt="@Model.Title" />
         </div>
         <div data-project-state="live" id="about">
-            @Model.Desciption
+            @Html.Raw(Model.Desciption)
         </div>
     </div>
-    <div class="col-md-3">
-        <div id="stats">
-            <h5>
-                @Model.Backers Apoiadores
-            </h5>
-            <h5>
-                R$@Model.CurrentCollected de R$ @Model.Required
-            </h5>
-            <div class="num">10</div>
-            <span class="text">dias faltando</span>
+    <div class="projectStatus col-md-3">
+        <div>
+            <div id="stats">
+                <h2 class="text-muted">
+                    @Model.Backers Apoiadores
+                </h2>
+                <h2 class="text-success">
+                    R$@Model.CurrentCollected de R$ @Model.Required
+                </h2>
+                <h3 class="text-muted">
+                    10  dias para o final
+                </h3>
+
+            </div>
+        </div>
+        <div class="NS-projects-rightcol-projectby" id="project-by">
+            <h4> Um projeto de @Model.Owner</h4>
         </div>
     </div>
 
-    <div class="NS-projects-rightcol-projectby" id="project-by">
-        <h3> Um projeto de @Model.Owner</h3>
-    </div>
+
+
 
 </div>
 
