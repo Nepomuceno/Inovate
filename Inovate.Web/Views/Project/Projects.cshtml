@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Inovate.Web.Models.ProjectViewModel>
+
+@{
+    ViewBag.Title = "Projects";
+}
+
+<h2>Projects</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div>
+    <ul>
+        <li>
+
+        </li>
+    </ul>
+</div>
+
+
+@foreach (var item in Model) {
+    <img src="@item.ImageUrl" alt="@item.Title"/>
+    <h1>@item.Title</h1>
+    <span>por @item.Owner </span> 
+    <span>@item.Desciption</span>
+    <span></span>
+}
+

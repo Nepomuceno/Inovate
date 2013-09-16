@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Configuration;
 
 namespace Inovate.Web.Models
 {
@@ -9,5 +10,6 @@ namespace Inovate.Web.Models
 
     public class ApplicationDbContext : IdentityDbContextWithCustomUser<ApplicationUser>
     {
+       
     }
 }
