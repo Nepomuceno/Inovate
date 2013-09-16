@@ -4,25 +4,27 @@
     ViewBag.Title = "Projects";
 }
 
-<h2>Projects</h2>
+<h2>Projetos</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<div>
-    <ul>
-        <li>
-
-        </li>
-    </ul>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        var barpercentage = (item.CurrentCollected / item.Required * 100).ToString();
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="@item.ImageUrl" alt="@item.Title" />
+                <div class="caption">
+                    <h3>@item.Title</h3>
+                    <p>por @item.Owner </p>
+                    <p>@item.ShortDescription</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@item.CurrentCollected" aria-valuemin="0" aria-valuemax="@item.Required" style="width: @barpercentage%">
+                            <span class="sr-only">@barpercentage% Completo</span>
+                        </div>
+                    </div>
+                    <p><a href="@Url.Action("Project", "Project", new { projectId = item.Id })" class="btn btn-default">Detalhes</a></p>
+                </div>
+            </div>
+        </div>
+    }
 </div>
-
-
-@foreach (var item in Model) {
-    <img src="@item.ImageUrl" alt="@item.Title"/>
-    <h1>@item.Title</h1>
-    <span>por @item.Owner </span> 
-    <span>@item.Desciption</span>
-    <span></span>
-}
-

@@ -1,12 +1,20 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@using Microsoft.AspNet.Identity
+@model Inovate.Web.Models.ApplicationUser
+@{
+    ViewBag.Title = "Crédito";
 }
 <hgroup>
     <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
 </hgroup>
 <div class="row-fluid">
     <div class="span12">
-        <p>Use this area to provide additional information.</p>
+        @if (Request.IsAuthenticated)
+        {
+            <h1>Meu crédito atual é <span class="text-success" style="font-weight:bolder">@Html.Raw((new Random()).Next(150)).</span></h1>
+        }
+        else
+        {
+            <h1> Voce precisa estar autenticado apra ver seu saldo</h1>
+        }
     </div>
 </div>

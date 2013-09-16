@@ -34,3 +34,6 @@ input[type="checkbox"].input-validation-error {
   background-color: white;
   border-style:none;
 }
+.jumbotron {
+  background-image:url('http://lorempixel.com/1600/500/business/')
+}

@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Configuration;
 
 namespace Inovate.Web.Models
 {
-    // You can add profile data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : User
-    {  
+    {
+        public ApplicationUser()
+        {
+            Random rd = new Random();
+            CurrentCredit = rd.Next(10, 150);
+        }
+        public decimal CurrentCredit { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContextWithCustomUser<ApplicationUser>

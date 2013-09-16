@@ -15,7 +15,7 @@ namespace Inovate.Web.Controllers
             return View();
         }
 
-        public ActionResult ProfessionsMenaging()
+        public ActionResult ProfessionsManaging()
         {
             return View();
         }

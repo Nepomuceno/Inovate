@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inovate.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,11 +13,11 @@ namespace Inovate.Web.Controllers
         // GET: /Project/
         public ActionResult Projects()
         {
-            return View();
+            return View(ProjectViewModel.GenerateSampleData(10));
         }
-        public ActionResult Project( int projectId)
+        public ActionResult Project(int projectId)
         {
-            return View();
+            return View(ProjectViewModel.GenerateSampleData(1).FirstOrDefault());
         }
         public ActionResult CreateProject()
         {

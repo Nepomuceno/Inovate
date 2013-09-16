@@ -1,0 +1,107 @@
+﻿@model Inovate.Web.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "CreateProject";
+}
+
+<h2>Novo Projeto Project</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Novo Projeto</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ImageUrl, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.ImageUrl)
+                @Html.ValidationMessageFor(model => model.ImageUrl, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ShortDescription, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.ShortDescription)
+                @Html.ValidationMessageFor(model => model.ShortDescription, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Desciption, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Desciption)
+                @Html.ValidationMessageFor(model => model.Desciption, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Owner, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Owner)
+                @Html.ValidationMessageFor(model => model.Owner, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Required, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Required)
+                @Html.ValidationMessageFor(model => model.Required, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.CurrentCollected, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.CurrentCollected)
+                @Html.ValidationMessageFor(model => model.CurrentCollected, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.MaxDate, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.MaxDate)
+                @Html.ValidationMessageFor(model => model.MaxDate, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.StartDate, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.StartDate)
+                @Html.ValidationMessageFor(model => model.StartDate, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Backers, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Backers)
+                @Html.ValidationMessageFor(model => model.Backers, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

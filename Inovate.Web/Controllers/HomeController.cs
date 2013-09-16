@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inovate.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,25 +11,15 @@ namespace Inovate.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var viewModel = new HomeIndexViewModel();
+            viewModel.FeaturedProjects = ProjectViewModel.GenerateSampleData(3);
+            viewModel.RecentProjects = ProjectViewModel.GenerateSampleData(3);
+            return View(viewModel);
         }
 
         public ActionResult TopProjects()
         {
-            return View();
-        }
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(ProjectViewModel.GenerateSampleData(5));
         }
     }
 }
